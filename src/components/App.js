@@ -119,7 +119,7 @@ const App = () => {
       {/* Do not remove the main div */}
       <form>
         <h3>{getTitle(step)}</h3>
-        <Step step={form[step]} onChange={handleChangeInput} />
+        <Step data={form[step]} onChange={handleChangeInput} />
         <div className="buttons">
           {step > 0 && (
             <button type="button" onClick={handlePrevious}>

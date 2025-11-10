@@ -1,10 +1,10 @@
 import React from "react";
-const Step = ({ step, onChange }) => {
+const Step = ({ data, onChange, step }) => {
   return (
-    <div>
-      <h1>{step.title}</h1>
-      {step.map((input, index) => (
-        <div key={`${step.id}-${index}`} className="input-div">
+    <div id={`step${step+1}`}>
+      <h1>{data.title}</h1>
+      {data.map((input, index) => (
+        <div key={`${data.id}-${index}`} className="input-div">
           <label htmlFor={input.id}>{input.label}:</label>
           <br/>
           <input
