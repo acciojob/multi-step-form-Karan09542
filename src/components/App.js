@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import "./../styles/App.css";
-import Step from "./Step";
+import MultiStepForm from "./MultiStepForm";
 
 const App = () => {
   const [step, setStep] = useState(0);
@@ -67,11 +67,18 @@ const App = () => {
     }
     if (
       name === "expiry_date" &&
-      value.split("/").length !== 2 ||
-      !value.split("/").every((num) => parseInt(num) > 0 && num.length <= 2 && num.length >0)
+      (value.split("/").length !== 2 ||
+        (value.split("/").length === 2 &&
+          !value
+            .split("/")
+            .every(
+              (num) => parseInt(num) > 0 && num.length <= 2 && num.length > 0
+            )))
     ) {
       return "Expiry Date must be in MM/YY format";
     }
+
+    return "";
   };
 
   const handleChangeInput = useCallback(
@@ -82,7 +89,7 @@ const App = () => {
         currentStep[index] = {
           ...currentStep[index],
           value,
-          error: getError(currentStep[index].name, value),
+          error: step === 2 ? getError(currentStep[index].name, value) : "",
         };
         updated[step] = currentStep;
         return updated;
@@ -119,20 +126,13 @@ const App = () => {
       {/* Do not remove the main div */}
       <form>
         <h3>{getTitle(step)}</h3>
-        <Step data={form[step]} onChange={handleChangeInput} />
-        <div className="buttons">
-          {step > 0 && (
-            <button type="button" onClick={handlePrevious}>
-              previous
-            </button>
-          )}
-          {step < form.length - 1 && (
-            <button type="button" onClick={handleNext}>
-              next
-            </button>
-          )}
-          {step === form.length - 1 && <button type="submit">submit</button>}
-        </div>
+        <MultiStepForm
+          data={form}
+          onChange={handleChangeInput}
+          step={step}
+          handlePrevious={handlePrevious}
+          handleNext={handleNext}
+        />
       </form>
     </div>
   );
