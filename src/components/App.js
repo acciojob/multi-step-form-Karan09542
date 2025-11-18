@@ -124,16 +124,14 @@ const App = () => {
   return (
     <div>
       {/* Do not remove the main div */}
-      <form>
-        <h3>{getTitle(step)}</h3>
         <MultiStepForm
           data={form}
           onChange={handleChangeInput}
           step={step}
           handlePrevious={handlePrevious}
           handleNext={handleNext}
+          title = {getTitle(step)}
         />
-      </form>
     </div>
   );
 };
