@@ -7,55 +7,109 @@ const MultiStepForm = ({
   handleNext,
   title,
 }) => {
-  const input = data[step][0];
+  const [input1, input2] = data[step];
   return (
     <form id={`step${step + 1}`}>
       <h3>{title}</h3>
-      <div id="step1" className="input-div">
+      <div id="step1">
         {step + 1 === 1 && (
           <>
-            <label htmlFor={input.id}>{input.label}:</label>
-            <br />
-            <input
-              type={input.type}
-              id={input.id}
-              name={input.name}
-              onChange={(e) => onChange(e.target.value, index)}
-              value={input.value}
-            />
-            <div>{input.error && <p className="error">{input.error}</p>}</div>
+            <div className="input-div">
+              <label htmlFor={input1.id}>{input1.label}:</label>
+              <br />
+              <input
+                type={input1.type}
+                id={input1.id}
+                name={input1.name}
+                onChange={(e) => onChange(e.target.value, 0)}
+                value={input1.value}
+              />
+              <div>
+                {input1.error && <p className="error">{input1.error}</p>}
+              </div>
+            </div>
+            <div className="input-div">
+              <label htmlFor={input2.id}>{input2.label}:</label>
+              <br />
+              <input
+                type={input2.type}
+                id={input2.id}
+                name={input2.name}
+                onChange={(e) => onChange(e.target.value, 1)}
+                value={input2.value}
+              />
+              <div>
+                {input2.error && <p className="error">{input2.error}</p>}
+              </div>
+            </div>
           </>
         )}
       </div>
-      <div id="step2" className="input-div">
+      <div id="step2">
         {step + 1 === 2 && (
           <>
-            <label htmlFor={input.id}>{input.label}:</label>
-            <br />
-            <input
-              type={input.type}
-              id={input.id}
-              name={input.name}
-              onChange={(e) => onChange(e.target.value, index)}
-              value={input.value}
-            />
-            <div>{input.error && <p className="error">{input.error}</p>}</div>
+            <div className="input-div">
+              <label htmlFor={input1.id}>{input1.label}:</label>
+              <br />
+              <input
+                type={input1.type}
+                id={input1.id}
+                name={input1.name}
+                onChange={(e) => onChange(e.target.value, 0)}
+                value={input1.value}
+              />
+              <div>
+                {input1.error && <p className="error">{input1.error}</p>}
+              </div>
+            </div>
+            <div className="input-div">
+              <label htmlFor={input2.id}>{input2.label}:</label>
+              <br />
+              <input
+                type={input2.type}
+                id={input2.id}
+                name={input2.name}
+                onChange={(e) => onChange(e.target.value, 1)}
+                value={input2.value}
+              />
+              <div>
+                {input2.error && <p className="error">{input2.error}</p>}
+              </div>
+            </div>
           </>
         )}
       </div>
-      <div id="step3" className="input-div">
+      <div id="step2">
         {step + 1 === 3 && (
           <>
-            <label htmlFor={input.id}>{input.label}:</label>
-            <br />
-            <input
-              type={input.type}
-              id={input.id}
-              name={input.name}
-              onChange={(e) => onChange(e.target.value, index)}
-              value={input.value}
-            />
-            <div>{input.error && <p className="error">{input.error}</p>}</div>
+            <div className="input-div">
+              <label htmlFor={input1.id}>{input1.label}:</label>
+              <br />
+              <input
+                type={input1.type}
+                id={input1.id}
+                name={input1.name}
+                onChange={(e) => onChange(e.target.value, 0)}
+                value={input1.value}
+              />
+              <div>
+                {input1.error && <p className="error">{input1.error}</p>}
+              </div>
+            </div>
+            <div className="input-div">
+              <label htmlFor={input2.id}>{input2.label}:</label>
+              <br />
+              <input
+                type={input2.type}
+                id={input2.id}
+                name={input2.name}
+                onChange={(e) => onChange(e.target.value, 1)}
+                value={input2.value}
+              />
+              <div>
+                {input2.error && <p className="error">{input2.error}</p>}
+              </div>
+            </div>
           </>
         )}
       </div>
