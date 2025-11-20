@@ -44,7 +44,7 @@ const MultiStepForm = ({
             </div>
             <div className="buttons">
               <button type="button" onClick={handleNext}>
-                next
+                Next
               </button>
             </div>
           </>
@@ -83,11 +83,11 @@ const MultiStepForm = ({
             </div>
             <div className="buttons">
               <button type="button" onClick={handlePrevious}>
-                previous
+                Previous
               </button>
 
               <button type="button" onClick={handleNext}>
-                next
+                Next
               </button>
             </div>
           </>
@@ -126,10 +126,10 @@ const MultiStepForm = ({
             </div>
             <div className="buttons">
               <button type="button" onClick={handlePrevious}>
-                previous
+                Previous
               </button>
 
-              <button type="button">submit</button>
+              <button type="button">Submit</button>
             </div>
           </>
         )}
