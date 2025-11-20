@@ -27,18 +27,18 @@ const App = () => {
       {
         value: "",
         type: "text",
-        id: "brand",
-        label: "Brand",
-        error: "",
-        name: "make",
-      },
-      {
-        value: "",
-        type: "text",
         id: "model",
         label: "Model",
         error: "",
         name: "model",
+      },
+      {
+        value: "",
+        type: "text",
+        id: "car_price",
+        label: "Car Price",
+        error: "",
+        name: "car_price",
       },
     ],
     [
