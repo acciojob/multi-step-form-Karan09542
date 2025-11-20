@@ -42,6 +42,11 @@ const MultiStepForm = ({
                 {input2.error && <p className="error">{input2.error}</p>}
               </div>
             </div>
+            <div className="buttons">
+              <button type="button" onClick={handleNext}>
+                next
+              </button>
+            </div>
           </>
         )}
       </div>
@@ -75,6 +80,15 @@ const MultiStepForm = ({
               <div>
                 {input2.error && <p className="error">{input2.error}</p>}
               </div>
+            </div>
+            <div className="buttons">
+              <button type="button" onClick={handlePrevious}>
+                previous
+              </button>
+
+              <button type="button" onClick={handleNext}>
+                next
+              </button>
             </div>
           </>
         )}
@@ -110,21 +124,15 @@ const MultiStepForm = ({
                 {input2.error && <p className="error">{input2.error}</p>}
               </div>
             </div>
+            <div className="buttons">
+              <button type="button" onClick={handlePrevious}>
+                previous
+              </button>
+
+              <button type="button">submit</button>
+            </div>
           </>
         )}
-      </div>
-      <div className="buttons">
-        {step > 0 && (
-          <button type="button" onClick={handlePrevious}>
-            previous
-          </button>
-        )}
-        {step < data.length - 1 && (
-          <button type="button" onClick={handleNext}>
-            next
-          </button>
-        )}
-        {step === data.length - 1 && <button type="button">submit</button>}
       </div>
     </form>
   );
