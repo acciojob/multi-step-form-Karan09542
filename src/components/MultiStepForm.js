@@ -124,7 +124,7 @@ const MultiStepForm = ({
             next
           </button>
         )}
-        {step === data.length - 1 && <button type="submit">submit</button>}
+        {step === data.length - 1 && <button type="button">submit</button>}
       </div>
     </form>
   );
