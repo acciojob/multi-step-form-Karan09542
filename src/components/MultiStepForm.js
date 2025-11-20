@@ -9,7 +9,7 @@ const MultiStepForm = ({
 }) => {
   const [input1, input2] = data[step];
   return (
-    <form id={`step${step + 1}`}>
+    <form>
       <h3>{title}</h3>
       <div id="step1">
         {step + 1 === 1 && (
@@ -79,7 +79,7 @@ const MultiStepForm = ({
           </>
         )}
       </div>
-      <div id="step2">
+      <div id="step3">
         {step + 1 === 3 && (
           <>
             <div className="input-div">
